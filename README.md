@@ -66,7 +66,8 @@ This cannot be achieved with static rules alone.
 
 ## Demo
 Live Demo:
-👉 https://risklens-demo.vercel.app
+👉 [https://risklens-demo.vercel.app](https://risklens-demo-puce.vercel.app/)
+
 
 The demo showcases:
 - Analyst dashboard
