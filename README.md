@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RiskLens – AI-Powered Compliance & Risk Intelligence
 
-## Getting Started
+## Overview
+RiskLens is an AI-powered compliance and risk intelligence system designed to help financial platforms detect, reason about, and manage risk more effectively.
 
-First, run the development server:
+Unlike traditional rule-based monitoring systems that generate large volumes of false positives, RiskLens focuses on **context-aware risk reasoning**, transparency, and human-in-the-loop decision making.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## The Problem
+Modern financial platforms process millions of transactions under strict regulatory requirements.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Compliance teams face:
+- Alert fatigue from static rule-based systems
+- High false-positive rates
+- Manual reviews of low-risk cases
+- Reduced focus on genuinely high-risk activity
+- Poor explainability during audits
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## The Solution
+RiskLens introduces an AI-assisted decision intelligence layer that:
+- Aggregates multiple behavioral and transactional signals
+- Computes explainable risk scores
+- Recommends actions without enforcing them
+- Keeps humans in full control of final decisions
+- Maintains a complete audit trail for compliance
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How It Works
+1. **Signal Ingestion**
+   - Transaction patterns
+   - User behavior & velocity
+   - Geo-location changes
+   - KYC metadata
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **AI Risk Reasoning**
+   - Multi-factor risk scoring
+   - Pattern interpretation (not just thresholds)
+   - Transparent explanations per decision
 
-## Deploy on Vercel
+3. **Human-in-the-Loop**
+   - Analysts can monitor, accept, escalate, or override
+   - Every action is logged with reasoning
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Audit Ledger**
+   - Immutable log of AI and human decisions
+   - Full traceability for regulatory audits
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Why AI Matters Here
+AI in RiskLens is not used as a chatbot or UI wrapper.
+
+It is core to the system by:
+- Interpreting complex behavioral patterns
+- Reducing false positives
+- Providing explainable reasoning
+- Supporting analyst decision-making rather than replacing it
+
+This cannot be achieved with static rules alone.
+
+---
+
+## Demo
+Live Demo:
+👉 https://risklens-demo.vercel.app
+
+The demo showcases:
+- Analyst dashboard
+- Risk scoring & explanations
+- Decision actions (monitor / escalate)
+- Audit trail logging
+- Strategic impact projections
+
+---
+
+## Tech Stack
+- Frontend: Next.js + Tailwind
+- Backend: Serverless APIs
+- AI: LLM-based reasoning layer
+- Hosting: Vercel
+- Data: Fully synthetic demo data
+
+---
+
+## Data & Security
+- No real user data is used
+- All data is synthetic and mock-generated
+- No production credentials or API keys are exposed
+- Built for demonstration purposes only
+
+---
+
+## Project Context
+This prototype was built as part of the **Deriv AI Talent Sprint Hackathon** to demonstrate a real-world, job-ready AI system focused on compliance, risk, and decision intelligence.
