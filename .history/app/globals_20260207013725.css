@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0B1218;
+  --panel-bg: #0F1A24;
+  --accent-gold: #D4AF37;
+  --accent-cyan: #00E5FF;
+  --accent-red: #EF4444;
+  --accent-emerald: #10B981;
+  --text-primary: #F0F4F8;
+  --text-secondary: #94A3B8;
+  --border-color: #1E293B;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-panel-bg: var(--panel-bg);
+  --color-gold: var(--accent-gold);
+  --color-cyan: var(--accent-cyan);
+  --color-emerald: var(--accent-emerald);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-main: var(--border-color);
+  --font-sans: 'Inter', 'IBM Plex Sans', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enterprise-grade smooth transitions */
+*,
+*::before,
+*::after {
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disable transitions for layout properties to prevent jank */
+button,
+a,
+input,
+select,
+textarea {
+  transition-property: color, background-color, border-color, opacity, box-shadow;
+}
+
+/* Intelligence Theme Utilities */
+.glow-gold {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+}
+
+.panel-depth {
+  background: linear-gradient(180deg, rgba(15, 26, 36, 0.8) 0%, rgba(11, 18, 24, 1) 100%);
+  backdrop-filter: blur(8px);
+}
+
+.technical-border {
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.technical-border::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 4px;
+  height: 4px;
+  border-right: 1px solid var(--accent-gold);
+  border-top: 1px solid var(--accent-gold);
+  opacity: 0.5;
+}
+
+/* Custom scrollbars for enterprise feel */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 229, 255, 0.2);
+  color: var(--text-primary);
+}
+
+/* Refined animations */
+@keyframes sentinel-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-sentinel {
+  animation: sentinel-pulse 3s infinite ease-in-out;
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scan-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  animation: scan-line 4s linear infinite;
+  opacity: 0.1;
+  pointer-events: none;
+}

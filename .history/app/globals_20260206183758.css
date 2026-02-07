@@ -126,7 +126,32 @@ tbody tr {
   transition: background-color 150ms ease;
 }
 
-/* Button press state */
+
+@layer utilities {
+  .animate-enterprise-in {
+    animation: enterprise-in 220ms ease-out forwards;
+  }
+}
+
+@keyframes enterprise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-enterprise-in {
+    animation: fade-in 200ms ease-out forwards;
+    transform: none !important;
+  }
+}
+
 button:active:not(:disabled) {
   transform: scale(0.98);
 }
